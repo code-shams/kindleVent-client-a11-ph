@@ -33,8 +33,8 @@
     --tab-border: 1px;
     --tab-radius: 0.5rem;
     /* --body-gradient: linear-gradient(to right, #2193b0, #6dd5ed);    */
-    --body-gradient: linear-gradient(to right, #06beb6, #48b1bf);
-    --bg-overlay: rgba(255, 255, 255, 0);
+    --body-gradient: linear-gradient(to right, #06beb6, #06bea1, #48b1bf);
+    --bg-overlay: rgba(255, 255, 255, 0.3);
     /* --bg-overlay: rgba(0, 0, 0, 0.1); */
 }
 
@@ -45,7 +45,6 @@
     --color-secondary: hsl(187.41 100% 70%);
     --color-secondary-content: hsl(0 0% 10%);
     --color-accent: hsl(64.44 100% 70%);
-    /* --color-accent-content: rgb(0, 0, 0); */
     --color-accent-content: hsl(0 0% 10%);
     --color-neutral: hsl(0 0% 90%);
     --color-base-100: hsl(0 0% 15%);
@@ -66,8 +65,8 @@
     --border-btn: 1px;
     --tab-border: 1px;
     --tab-radius: 0.5rem;
-    --body-gradient: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    --body-gradient: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /* --body-gradient: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    /* --body-gradient: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
 
     --body-gradient: linear-gradient(to right, #06beb6, #48b1bf);
     --bg-overlay: rgba(255, 255, 255, 0);
@@ -87,7 +86,7 @@
     @apply w-11/12 mx-auto max-w-[1515px];
 }
 
-#upcoming.active {
+a.navlinks.active {
     @apply text-primary font-semibold;
 }
 

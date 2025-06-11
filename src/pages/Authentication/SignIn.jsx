@@ -1,19 +1,9 @@
-// import React from 'react'
-
-// const SignIn = () => {
-//   return (
-//     <div>SignIn</div>
-//   )
-// }
-
-// export default SignIn
-
 import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Lottie from "lottie-react";
-import signInAni from "../../assets/signIn.json";
+import signInAni from "../../assets/signIn.json"
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
@@ -64,7 +54,7 @@ const SignIn = () => {
             flex flex-col-reverse md:flex-row-reverse justify-between gap-3"
             >
                 <div className="md:w-1/3">
-                    <h1 className="text-center text-secondary sec-font text-xl md:text-2xl font-semibold">
+                    <h1 className="text-center text-secondary sec-font text-base md:text-2xl font-semibold">
                         Sign In
                     </h1>
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -105,14 +95,14 @@ const SignIn = () => {
                                 )}
                             </button>
                         </div>
-                        <button className="btn btn-primary w-full">
+                        <button className="btn btn-primary btn-sm md:btn-md w-full">
                             Sign In
                         </button>
                     </form>
                     <div className="space-y-3">
                         <div className="flex items-center md:pt-4 space-x-1">
                             <div className="flex-1 h-px sm:w-16 bg-white"></div>
-                            <p className=" sm:px-3 text-sm">
+                            <p className=" sm:px-3 text-sm mt-3 md:mt-0">
                                 Sign in with social accounts
                             </p>
                             <div className="flex-1 h-px sm:w-16 bg-white"></div>
@@ -120,7 +110,7 @@ const SignIn = () => {
                         <div className="flex justify-center space-x-4">
                             <button
                                 type="button"
-                                className="btn btn-primary w-full"
+                                className="btn btn-primary btn-sm md:btn-md w-full"
                                 onClick={handleGoogleSignIn}
                             >
                                 Sign In with Google
@@ -135,7 +125,7 @@ const SignIn = () => {
                     </div>
                 </div>
                 <div className="my-auto md:w-3/5">
-                    <h1 className="text-center text-secondary sec-font text-xl md:text-2xl lg:text-3xl font-semibold pri-font">
+                    <h1 className="text-center text-secondary sec-font text-base md:text-2xl lg:text-3xl font-semibold pri-font">
                         Welcome Back to kindleVent
                     </h1>
                     <Lottie
