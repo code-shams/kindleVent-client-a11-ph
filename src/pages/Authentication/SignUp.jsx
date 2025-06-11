@@ -141,12 +141,12 @@ const SignUp = () => {
                             Sign Up
                         </button>
                     </form>
-                    <div className="flex items-center md:pt-4 space-x-1">
-                        <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+                    <div className="flex items-center space-x-1">
+                        <div className="flex-1 h-px sm:w-16 bg-white"></div>
                         <p className=" sm:px-3 text-sm">
                             Sign Up with social accounts
                         </p>
-                        <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+                        <div className="flex-1 h-px sm:w-16 bg-white"></div>
                     </div>
                     <div className="flex justify-center space-x-4">
                         <button
@@ -159,7 +159,7 @@ const SignUp = () => {
                     </div>
                     <p className="text-sm text-center sm:px-6">
                         Already have an account?
-                        <Link to="/auth/sign-in" className="underline ml-1">
+                        <Link to="/sign-in" className="underline ml-1">
                             Sign In
                         </Link>
                     </p>

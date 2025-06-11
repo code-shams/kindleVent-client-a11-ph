@@ -7,11 +7,13 @@ import SignUp from "../pages/Authentication/SignUp";
 import JoinEvent from "../pages/EventPages/JoinEvent";
 import CreateEvent from "../pages/EventPages/CreateEvent";
 import ManageEvent from "../pages/EventPages/ManageEvent";
+import DefaultError from "../pages/Error/DefaultError";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         Component: Mainlayout,
+        errorElement: <DefaultError></DefaultError>,
         children: [
             { index: true, Component: Homepage },
             {
