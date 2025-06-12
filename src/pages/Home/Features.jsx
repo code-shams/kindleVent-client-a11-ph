@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Features = () => {
     return (
         <div className="pt-5 md:pt-10 pri-font">
-            <h1 className="text-lg md:text-3xl font-medium text-center bg-secondary/20 border-2 border-secondary/50 shadow-lg py-2 px-2 md:px-10 backdrop-blur-sm rounded-xl w-full mx-auto transition-all duration-300">
+            <h1 className="text-lg md:text-3xl font-medium text-center bg-secondary/20 border-2 border-secondary/50 shadow-lg py-2 px-2 md:px-10 backdrop-blur-sm rounded-xl w-full mx-auto">
                 How You Can Drive Change
             </h1>
             {/* Cards */}

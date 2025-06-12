@@ -36,7 +36,7 @@ const Mainlayout = () => {
                     <header className="">
                         <Navbar></Navbar>
                     </header>
-                    <main className="z-10 relative pt-26 md:pt-26">
+                    <main className="z-10 relative pt-22 md:pt-26">
                         <Outlet></Outlet>
                     </main>
                     <footer className="z-10 relative">
