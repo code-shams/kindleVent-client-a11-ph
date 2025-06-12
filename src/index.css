@@ -78,7 +78,7 @@
 
     /* ?Redish */
     --body-gradient: linear-gradient(to right, #c04848, #480048);
-    --bg-overlay: rgba(0, 0, 0, 0.5);
+    --bg-overlay: rgba(0, 0, 0, 0.7);
 }
 
 .pri-font {

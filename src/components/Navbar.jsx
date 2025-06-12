@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav
             className="contain z-20 p-2 md:p-4
             bg-white/10 backdrop-blur-md
-            border border-secondary/30
+            border border-t-0 border-secondary/30
             shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font"
         >
             <div>
@@ -55,14 +55,14 @@ const Navbar = () => {
                             <span
                                 className={`hidden ${
                                     menuActive ? "" : "md:block"
-                                } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/70 backdrop-blur-sm translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out`}
+                                } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/90 drop-shadow-2xl translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out`}
                             >
                                 {user.displayName}
                             </span>
                         </div>
                         {/* Dropdown Menu */}
                         <div
-                            className={`z-50 border-secondary border-2 bg-secondary/90 backdrop-blur-3xl rounded shadow-lg p-2 w-42 md:w-54 absolute right-5 top-17 space-y-2 text-black ${
+                            className={`z-50 border-secondary border-2 bg-secondary/90 drop-shadow-2xl rounded shadow-lg p-2 w-42 md:w-54 absolute right-5 top-17 space-y-2 text-black ${
                                 menuActive
                                     ? "translate-0 scale-100"
                                     : "translate-x-96 scale-0"

@@ -4,21 +4,7 @@ const Gallery = () => {
     return (
         <div className="pt-5 md:pt-10 sec-font">
             <h1 className="section-heading">Gallery</h1>
-
             {/* Images */}
-            {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-5"> */}
-            {/* image1 */}
-            {/* <div className="relative scale-95 hover:scale-100 transition group overflow-hidden rounded-lg">
-                    <img
-                        className="rounded-lg w-full"
-                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop"
-                        alt=""
-                    />
-                    <p className="p-2 bg-secondary/20 drop-shadow-lg backdrop-blur-lg absolute top-0 text-sm font-semibold text-center text-white h-16 group-hover:h-96 transition-all duration-500 ease-in-out overflow-hidden">
-                        Tree Plantation - Hossainpur, Kishoreganj
-                    </p>
-                </div>
-            </section> */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5">
                 {/* image1 */}
                 <div className="relative scale-95 hover:scale-100 transition group overflow-hidden rounded-lg">
@@ -75,6 +61,7 @@ const Gallery = () => {
                         src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&h=500&fit=crop"
                         alt=""
                     />
+                    <div className="bg-black/20 absolute inset-0 z-0"></div>
                     <p className="p-2 w-full bg-secondary/20 drop-shadow-lg backdrop-blur-lg absolute top-0 text-sm font-semibold text-center text-white h-16 group-hover:h-96 group-hover:text-accent transition-all duration-500 ease-in-out overflow-hidden">
                         Green Initiative - Rajshahi District
                     </p>
