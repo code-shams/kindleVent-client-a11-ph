@@ -17,7 +17,7 @@ const Newsletter = () => {
                 <input
                     type="text"
                     placeholder="Enter your email"
-                    className="input input-xs md:input-md rounded-md bg-black/20 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0 shadow-lg placeholder:text-white w-9/12 sm:w-auto mx-auto sm:m-0"
+                    className="input input-xs md:input-md rounded-md bg-black/20 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0 shadow-lg placeholder:text-white w-9/12 sm:w-6/12 mx-auto sm:m-0"
                 />
                 <button className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none hover:-translate-y-1 transition sec-font">
                     <BellPlus className="size-3 md:size-5"></BellPlus>

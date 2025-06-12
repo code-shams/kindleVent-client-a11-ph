@@ -55,7 +55,7 @@ const Navbar = () => {
                             <span
                                 className={`hidden ${
                                     menuActive ? "" : "md:block"
-                                } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/90 drop-shadow-2xl translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out`}
+                                } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/90 drop-shadow-2xl translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out text-black`}
                             >
                                 {user.displayName}
                             </span>
