@@ -8,14 +8,19 @@ import JoinEvent from "../pages/EventPages/JoinEvent";
 import CreateEvent from "../pages/EventPages/CreateEvent";
 import ManageEvent from "../pages/EventPages/ManageEvent";
 import DefaultError from "../pages/Error/DefaultError";
+import axios from 'axios';
 
+const serverURL = import.meta.env.VITE_SERVER_URL;
 export const router = createBrowserRouter([
     {
         path: "/",
         Component: Mainlayout,
         errorElement: <DefaultError></DefaultError>,
         children: [
-            { index: true, Component: Homepage },
+            { 
+                index: true,
+                Component: Homepage,
+            },
             {
                 path: "event/upcoming",
                 Component: Upcoming,

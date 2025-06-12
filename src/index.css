@@ -33,9 +33,16 @@
     --tab-border: 1px;
     --tab-radius: 0.5rem;
     /* --body-gradient: linear-gradient(to right, #2193b0, #6dd5ed);    */
-    --body-gradient: linear-gradient(to right, #06beb6, #06bea1, #48b1bf);
-    --bg-overlay: rgba(255, 255, 255, 0.3);
-    /* --bg-overlay: rgba(0, 0, 0, 0.1); */
+    /*? Fallback */
+    /* --body-gradient: linear-gradient(to right, #06beb6, #06bea1, #48b1bf); */
+    /* --bg-overlay: rgba(255, 255, 255, 0.3); */
+    /*?Icy one*/
+    /* --body-gradient: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+    /* ?Redish one */
+    /* --body-gradient: linear-gradient(to right, #c04848, #480048); */
+
+    --body-gradient: linear-gradient(to right, #dae2f8, #d6a4a4);
+    --bg-overlay: rgba(255, 255, 255, 0.2);
 }
 
 @plugin "daisyui/theme" {
@@ -65,13 +72,13 @@
     --border-btn: 1px;
     --tab-border: 1px;
     --tab-radius: 0.5rem;
-    /* --body-gradient: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-    /* --body-gradient: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+    /* ?Fallback */
+    /* --body-gradient: linear-gradient(to right, #06beb6, #48b1bf);
+    --bg-overlay: rgba(0, 0, 0, 0.7); */
 
-    --body-gradient: linear-gradient(to right, #06beb6, #48b1bf);
-    /* --bg-overlay: rgba(255, 255, 255, 0); */
-
-    --bg-overlay: rgba(0, 0, 0, 0.7);
+    /* ?Redish */
+    --body-gradient: linear-gradient(to right, #c04848, #480048);
+    --bg-overlay: rgba(0, 0, 0, 0.5);
 }
 
 .pri-font {
@@ -92,4 +99,8 @@ a.navlinks.active {
 
 a.navBtn.active {
     @apply bg-primary border-none text-black;
+}
+
+.transition {
+    @apply transition-all duration-300;
 }

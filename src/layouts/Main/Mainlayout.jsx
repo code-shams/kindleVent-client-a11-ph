@@ -15,7 +15,7 @@ const Mainlayout = () => {
             if (!loading) {
                 setShowLoader(false);
             }
-        }, 2000);
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, [loading]);
@@ -23,10 +23,10 @@ const Mainlayout = () => {
         <div
             className="min-h-screen relative"
             style={{
-                backgroundImage: `var(--body-gradient)`,
+                background: `var(--body-gradient)`,
             }}
         >
-            <div className="bg-[var(--bg-overlay)] absolute inset-0 z-0"></div>
+            <div className="bg-[var(--bg-overlay)] absolute inset-0"></div>
             {loading || showLoader || navigation.state === "loading" ? (
                 <div className="z-10">
                     <Loader></Loader>
@@ -36,7 +36,7 @@ const Mainlayout = () => {
                     <header className="">
                         <Navbar></Navbar>
                     </header>
-                    <main className="z-10 relative pt-22">
+                    <main className="z-10 relative pt-26 md:pt-26">
                         <Outlet></Outlet>
                     </main>
                     <footer className="z-10 relative">

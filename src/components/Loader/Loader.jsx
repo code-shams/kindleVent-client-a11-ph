@@ -9,7 +9,7 @@ const Loader = () => {
             // data-theme={localStorage.getItem("theme")}
         >
             <Lottie
-                className="h-40 my-auto"
+                className="h-32 my-auto animate-pulse"
                 animationData={animation}
                 loop={true}
             />

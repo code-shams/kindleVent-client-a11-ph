@@ -1,9 +1,9 @@
 import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
-import signInAni from "../../assets/signIn.json"
+import signInAni from "../../assets/signIn.json";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
@@ -47,14 +47,14 @@ const SignIn = () => {
     };
 
     return (
-        <div className="py-5 w-11/12 max-w-[1550px] mx-auto sticky top-20">
+        <div className="w-11/12 max-w-[1550px] mx-auto bg-secondary/30 backdrop-blur-sm border border-secondary rounded-2xl overflow-hidden">
             <title>Sign In</title>
             <div
-                className="bg-white/30 backdrop-blur-sm py-3 px-4 sm:p-5 space-y-3 rounded-2xl shadow-lg pri-font
+                className="py-3 px-4 sm:p-5 space-y-3 shadow-lg pri-font
             flex flex-col-reverse md:flex-row-reverse justify-between gap-3"
             >
                 <div className="md:w-1/3">
-                    <h1 className="text-center text-secondary sec-font text-base md:text-2xl font-semibold">
+                    <h1 className="text-center sec-font text-base md:text-2xl font-semibold">
                         Sign In
                     </h1>
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -95,7 +95,7 @@ const SignIn = () => {
                                 )}
                             </button>
                         </div>
-                        <button className="btn btn-primary btn-sm md:btn-md w-full">
+                        <button className="btn btn-primary btn-sm md:btn-md w-full scale-100 hover:bg-accent hover:border-none hover:scale-105 transition-all duration-300">
                             Sign In
                         </button>
                     </form>
@@ -110,22 +110,26 @@ const SignIn = () => {
                         <div className="flex justify-center space-x-4">
                             <button
                                 type="button"
-                                className="btn btn-primary btn-sm md:btn-md w-full"
+                                className="btn btn-primary btn-sm md:btn-md w-full scale-100 hover:bg-accent hover:border-none hover:scale-105 transition-all duration-300"
                                 onClick={handleGoogleSignIn}
                             >
+                                <FaGoogle></FaGoogle>
                                 Sign In with Google
                             </button>
                         </div>
                         <p className="text-sm text-center sm:px-6">
                             Don’t have an account?
-                            <Link to="/sign-up" className="underline ml-1">
+                            <Link
+                                to="/sign-up"
+                                className="underline ml-1 hover:text-accent transition-all duration-300"
+                            >
                                 Sign Up
                             </Link>
                         </p>
                     </div>
                 </div>
                 <div className="my-auto md:w-3/5">
-                    <h1 className="text-center text-secondary sec-font text-base md:text-2xl lg:text-3xl font-semibold pri-font">
+                    <h1 className="text-center sec-font text-base md:text-2xl lg:text-3xl font-semibold pri-font">
                         Welcome Back to kindleVent
                     </h1>
                     <Lottie

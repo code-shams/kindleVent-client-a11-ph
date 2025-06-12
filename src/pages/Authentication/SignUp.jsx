@@ -1,7 +1,7 @@
 import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import signUpAni from "../../assets/signUp.json";
@@ -58,11 +58,11 @@ const SignUp = () => {
             });
     };
     return (
-        <div className="my-5 w-11/12 max-w-[1550px] mx-auto shadow-lg bg-white/30 backdrop-blur-xl rounded-2xl">
+        <div className="w-11/12 max-w-[1550px] mx-auto shadow-lg bg-secondary/20 backdrop-blur-xl rounded-2xl">
             <title>SignUp</title>
             <div className="rounded-lg p-2 md:py-3 md:px-4 sm:p-5 pri-font flex flex-col-reverse md:flex-row gap-5 md:gap-20">
                 <div className="md:w-1/2 space-y-3">
-                    <h1 className="text-center text-xl md:text-2xl font-semibold sec-font text-secondary">
+                    <h1 className="text-center text-xl md:text-2xl font-semibold sec-font">
                         Sign Up
                     </h1>
                     <form
@@ -137,7 +137,7 @@ const SignUp = () => {
                                 </button>
                             )}
                         </div>
-                        <button className="w-full btn btn-primary btn-sm md:btn-md">
+                        <button className="w-full btn btn-primary btn-sm md:btn-md scale-100 hover:bg-accent hover:border-none hover:scale-105 transition-all duration-300">
                             Sign Up
                         </button>
                     </form>
@@ -152,20 +152,21 @@ const SignUp = () => {
                         <button
                             type="button"
                             onClick={handleGoogleSignIn}
-                            className="w-full btn btn-primary btn-sm md:btn-md"
+                            className="w-full btn btn-primary btn-sm md:btn-md scale-100 hover:bg-accent hover:border-none hover:scale-105 transition-all duration-300"
                         >
+                            <FaGoogle></FaGoogle>
                             Sign Up with Google
                         </button>
                     </div>
                     <p className="text-sm text-center sm:px-6">
                         Already have an account?
-                        <Link to="/sign-in" className="underline ml-1">
+                        <Link to="/sign-in" className="underline ml-1 transition-all duration-300 hover:text-accent">
                             Sign In
                         </Link>
                     </p>
                 </div>
                 <div className="w-full md:w-1/2">
-                    <h1 className="text-center text-xl md:text-2xl font-semibold sec-font text-secondary pri-font p-1 mx-auto">
+                    <h1 className="text-center text-xl md:text-2xl font-semibold sec-font pri-font p-1 mx-auto">
                         Welcome to kindleVent
                     </h1>
                     <Lottie
