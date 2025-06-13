@@ -62,7 +62,7 @@ const Navbar = () => {
                         </div>
                         {/* Dropdown Menu */}
                         <div
-                            className={`z-50 border-secondary border-2 bg-secondary/90 drop-shadow-2xl rounded shadow-lg p-2 w-42 md:w-54 absolute right-5 top-17 space-y-2 text-black ${
+                            className={`z-50 border-secondary border-2 bg-secondary/70 drop-shadow-2xl rounded shadow-lg p-2 w-42 md:w-54 absolute right-5 top-17 space-y-2 text-black ${
                                 menuActive
                                     ? "translate-0 scale-100"
                                     : "translate-x-96 scale-0"
