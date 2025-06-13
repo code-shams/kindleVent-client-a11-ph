@@ -1,13 +1,17 @@
 import React, { use, useState } from "react";
 import { FilePlus } from "lucide-react";
-import { FaChevronDown } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 import Loader from "../../components/Loader/Loader";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const CreateEvent = () => {
     const [loading, setLoading] = useState(false);
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
     const { user } = use(AuthContext);
     const handleAddPost = (e) => {
         setLoading(true);
@@ -33,7 +37,7 @@ const CreateEvent = () => {
             setLoading(false);
             return;
         }
-        setLoading(false)
+        setLoading(false);
         console.log(formObj);
         // fetch("https://cozy-nest-server.vercel.app/post", {
         //     method: "POST",
@@ -158,6 +162,16 @@ const CreateEvent = () => {
                                     placeholder="Event Thumbnail"
                                 />
                             </div>
+                            <div className="input input-xs md:input-md rounded-md bg-black/10 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-1/2 mx-auto sm:m-0 ">
+                                <span>Please select event date: </span>
+                                <DatePicker
+                                    selected={selectedDate}
+                                    showIcon
+                                     minDate={(new Date())}
+                                    className="cursor-pointer"
+                                    onChange={(date) => setSelectedDate(date)}
+                                />
+                            </div>
 
                             {/* Details Text Area */}
                             <div>
@@ -166,7 +180,7 @@ const CreateEvent = () => {
                                     cols="30"
                                     rows="10"
                                     placeholder={"Details"}
-                                    className="h-40 w-full resize-none rounded-md p-5 bg-black/10 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0"
+                                    className="h-40 w-full resize-none rounded-md p-5 bg-black/10 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0 mt-5"
                                 ></textarea>
                             </div>
                             <div className="text-center ">
