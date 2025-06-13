@@ -19,7 +19,7 @@ const Banner = () => {
             <div className="bg-black/10 absolute inset-0"></div>
             <div className="bg-secondary/20 backdrop-blur-lg w-full mx-auto my-auto p-3 md:p-10 h-full rounded-lg pri-font text-center space-y-1 md:space-y-5 flex flex-col justify-center items-center">
                 <p className="rounded-full flex items-center gap-2 text-sm md:text-base font-semibold text-primary sec-font">
-                    <Sparkles className="text-primary"></Sparkles>
+                    <Sparkles className="text-primary size-4 md:size-auto"></Sparkles>
                     Connect.
                     <span>
                         <Typewriter
@@ -53,7 +53,7 @@ const Banner = () => {
                     to="/sign-in"
                     className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none"
                 >
-                    <Handshake /> JOIN US !
+                    <Handshake className="size-4 md:size-auto" /> JOIN US !
                 </Link>
             </div>
         </div>

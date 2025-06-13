@@ -2,8 +2,8 @@ import React from "react";
 
 const Gallery = () => {
     return (
-        <div className="pt-5 md:pt-10 sec-font">
-            <h1 className="section-heading">Gallery</h1>
+        <div className="mt-5 md:mt-10 pri-font bg-secondary/20 border-2 border-secondary/10 rounded-xl shadow-lg p-0 md:p-7 pt-3 drop-shadow-lg">
+            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 w-max mx-auto drop-shadow-lg sec-font">Gallery</h1>
             {/* Images */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5">
                 {/* image1 */}
@@ -13,7 +13,7 @@ const Gallery = () => {
                         src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop"
                         alt=""
                     />
-                    <p className="p-2 w-full bg-secondary/20 drop-shadow-lg backdrop-blur-lg absolute top-0 text-sm font-semibold text-center text-white h-16 group-hover:h-96 group-hover:text-accent transition-all duration-500 ease-in-out overflow-hidden">
+                    <p className="p-2 w-full bg-secondary/20 drop-shadow-lg backdrop-blur-lg absolute top-0 text-sm font-semibold text-center text-white h-16 group-hover:h-96 group-hover:text-accent transition-all duration-500 ease-in-out ">
                         Tree Plantation - Hossainpur, Kishoreganj
                     </p>
                 </div>
