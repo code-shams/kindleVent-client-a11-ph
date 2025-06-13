@@ -17,10 +17,10 @@ const Navbar = () => {
     };
     return (
         <nav
-            className="contain z-20 p-2 md:p-4
+            className={`contain z-20 p-2 ${user?.email ? "md:p-2" : "md:p-4"}
             bg-white/10 backdrop-blur-md
             border border-t-0 border-secondary/30
-            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font"
+            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font`}
         >
             <div>
                 <Link
