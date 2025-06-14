@@ -8,8 +8,8 @@ import JoinEvent from "../pages/EventPages/JoinEvent";
 import CreateEvent from "../pages/EventPages/CreateEvent";
 import ManageEvent from "../pages/EventPages/ManageEvent";
 import DefaultError from "../pages/Error/DefaultError";
-import axios from "axios";
 import PrivateRoute from "./PrivateRoute";
+import Loader from "../components/Loader/Loader";
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
 export const router = createBrowserRouter([
@@ -24,6 +24,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: "event/upcoming",
+                hydrateFallbackElement: <Loader></Loader>,
+                loader: () => fetch(`${serverURL}/events/upcoming`),
                 Component: Upcoming,
             },
             {

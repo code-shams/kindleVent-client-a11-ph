@@ -29,11 +29,20 @@ const CreateEvent = () => {
         setLoading(true);
         e.preventDefault();
         const form = e.target;
+
+        // ?Converting dd/MM/yyyy date format to iso format
+        const formDate = form.eventDate.value; //* initial value of eventDate
+        const [day, month, year] = formDate.split("/").map(Number); //* converting formDate to number
+        const date = new Date(year, month - 1, day); //* converting formDate into js date obj
+        const isoDate = date.toISOString(); //* converting date into iso formate
+
         const formData = new FormData(form);
         const formObj = Object.fromEntries(formData.entries());
         formObj.creatorName = user.displayName;
         formObj.creatorEmail = user.email;
         formObj.creatorPhotoURL = user.photoURL;
+        formObj.eventDate = isoDate;
+
         formObj.participants = [];
         for (const key in formObj) {
             if (key !== "participants") {
@@ -52,13 +61,15 @@ const CreateEvent = () => {
         axiosDef.post("/event/create", formObj).then((data) => {
             setLoading(false);
             if (data?.data?.result?.insertedId) {
-                Swal.fire({
-                    text: "Successfully Added a Post",
+                toast.success("Successfully Added a Post", {
                     icon: "success",
-                    timer: 1500,
+                    position: "bottom-center",
+                    autoClose: 2000,
+                    hideProgressBar: true,
+                    theme: "dark",
                 });
                 form.reset();
-                navigate("/event/upcoming")
+                navigate("/event/upcoming");
             } else {
                 Swal.fire({
                     text: "Please try again!",
@@ -134,26 +145,33 @@ const CreateEvent = () => {
                                         <option value="Clean Up">
                                             Clean Up
                                         </option>
-                                        <option value="Tree Plantation">
-                                            Tree Plantation
+                                        <option value="Environment">
+                                            Environment
                                         </option>
-                                        <option value="Donation Drive">
-                                            Donation Drive
+                                        <option value="Education">
+                                            Education
+                                        </option>
+                                        <option value="Healthcare">
+                                            Healthcare
+                                        </option>
+                                        <option value="Charity">Charity</option>
+                                        <option value="Skill Development">
+                                            Skill Development
+                                        </option>
+                                        <option value="Food Distribution">
+                                            Food Distribution
                                         </option>
                                         <option value="Community Service">
                                             Community Service
                                         </option>
-                                        <option value="Environmental Awareness">
-                                            Environmental Awareness
-                                        </option>
-                                        <option value="Food Drive">
-                                            Food Drive
-                                        </option>
-                                        <option value="Educational Workshop">
-                                            Educational Workshop
-                                        </option>
                                         <option value="Fundraising">
                                             Fundraising
+                                        </option>
+                                        <option value="Awareness Campaign">
+                                            Awareness Campaign
+                                        </option>
+                                        <option value="Sports & Recreation">
+                                            Sports & Recreation
                                         </option>
                                     </select>
                                 </div>
@@ -176,7 +194,7 @@ const CreateEvent = () => {
                                     <DatePicker
                                         selected={selectedDate}
                                         minDate={minDate}
-                                        name="date"
+                                        name="eventDate"
                                         dateFormat="dd/MM/yyyy"
                                         className="cursor-pointer"
                                         onChange={(date) =>
@@ -191,7 +209,7 @@ const CreateEvent = () => {
                                     cols="30"
                                     rows="10"
                                     placeholder={"Details"}
-                                    className="h-40 w-full sm:w-1/2 mx-auto sm:m-0 resize-none rounded-md p-2 md:p-5  focus:outline-accent border bg-base-100 border-secondary focus:border-0 placeholder:text-sm md:placeholder:text-base"
+                                    className="h-40 w-full sm:w-1/2 mx-auto sm:m-0 resize-none rounded-md p-2 md:p-5  focus:outline-accent border bg-base-100 border-secondary focus:border-0 text-sm md:placeholder:text-base"
                                 ></textarea>
                             </div>
 

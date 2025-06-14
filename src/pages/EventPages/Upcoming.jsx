@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
-import useAxios from "../../Hooks/useAxios";
+import { useLoaderData } from "react-router";
 
 const Upcoming = () => {
-    const { axiosSecure } = useAxios();
-    const [event, setEvent] = useState([]);
-    useEffect(() => {
-        axiosSecure.get("/event/upcoming").then((data) => {
-            console.log(data).catch((err) => console.log(err));
-        });
-    }, []);
+    const eventData = useLoaderData();
     return <div>Upcoming</div>;
 };
 
