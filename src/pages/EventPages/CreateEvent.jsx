@@ -10,7 +10,7 @@ import useAxios from "../../Hooks/useAxios";
 import { useNavigate } from "react-router";
 
 const CreateEvent = () => {
-    const { axiosDef } = useAxios();
+    const { axiosSecure } = useAxios();
 
     const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ const CreateEvent = () => {
             setLoading(false);
             return;
         }
-        axiosDef.post("/event/create", formObj).then((data) => {
+        axiosSecure.post("/event/create", formObj).then((data) => {
             setLoading(false);
             if (data?.data?.result?.insertedId) {
                 toast.success("Successfully Added a Post", {
