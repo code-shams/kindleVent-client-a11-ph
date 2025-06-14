@@ -29,20 +29,11 @@ const CreateEvent = () => {
         setLoading(true);
         e.preventDefault();
         const form = e.target;
-
-        // ?Converting dd/MM/yyyy date format to iso format
-        const formDate = form.eventDate.value; //* initial value of eventDate
-        const [day, month, year] = formDate.split("/").map(Number); //* converting formDate to number
-        const date = new Date(year, month - 1, day); //* converting formDate into js date obj
-        const isoDate = date.toISOString(); //* converting date into iso formate
-
         const formData = new FormData(form);
         const formObj = Object.fromEntries(formData.entries());
         formObj.creatorName = user.displayName;
         formObj.creatorEmail = user.email;
         formObj.creatorPhotoURL = user.photoURL;
-        formObj.eventDate = isoDate;
-
         formObj.participants = [];
         for (const key in formObj) {
             if (key !== "participants") {
