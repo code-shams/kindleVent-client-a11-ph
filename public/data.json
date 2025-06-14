@@ -3,26 +3,15 @@
         "title": "Road Cleaning Drive in Mirpur 10, Dhaka",
         "description": "Join our community initiative to clean the main roads and surrounding areas of Mirpur 10. This cleanup drive aims to remove litter, plastic waste, and debris from sidewalks, drainage systems, and public spaces. We'll provide all necessary cleaning equipment including brooms, garbage bags, gloves, and safety vests. The event will start early morning to avoid traffic congestion and ensure maximum impact. Volunteers will be divided into teams to cover different sections of the area. Refreshments and light breakfast will be provided to all participants. This initiative is part of our ongoing effort to create a cleaner, healthier environment for our community and set an example for neighboring areas.",
         "eventType": "Cleanup",
-        "thumbnailImageURL": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=500&fit=crop",
+        "thumbnailImageURL": "https://images.unsplash.com/photo-1659004249963-1c1bdecfcbb8?w=800&h=500&fit=crop&auto=format",
         "location": "Mirpur 10, Dhaka",
-        "eventDate": "2025-07-15T06:00:00.000Z",
+        "eventDate": "15/07/2025",
         "creatorEmail": "ahmed.rahman@gmail.com",
         "creatorName": "Ahmed Rahman",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
         "participants": [
-            {
-                "email": "fatima.khatun@gmail.com",
-                "name": "Fatima Khatun",
-                "photoURL": "https://images.unsplash.com/photo-1494790108755-2616c330c643?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "karim.hassan@gmail.com",
-                "name": "Karim Hassan",
-                "photoURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["community", "environment", "dhaka", "cleanup"]
+            {"email": "ryuzaki05210@gmail.com"}
+        ]
     },
     {
         "title": "Tree Plantation - Hossainpur, Kishoreganj",
@@ -30,29 +19,11 @@
         "eventType": "Plantation",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop",
         "location": "Hossainpur, Kishoreganj",
-        "eventDate": "2025-07-22T07:00:00.000Z",
+        "eventDate": "22/07/2025",
         "creatorEmail": "nasir.uddin@gmail.com",
         "creatorName": "Nasir Uddin",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "rashida.begum@gmail.com",
-                "name": "Rashida Begum",
-                "photoURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "mamun.sheikh@gmail.com",
-                "name": "Mamun Sheikh",
-                "photoURL": "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "salma.akter@gmail.com",
-                "name": "Salma Akter",
-                "photoURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["environment", "plantation", "kishoreganj", "climate"]
+        "participants": []
     },
     {
         "title": "Winter Clothing Donation Drive - Old Dhaka",
@@ -60,19 +31,11 @@
         "eventType": "Donation",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=500&fit=crop",
         "location": "Lalbagh, Old Dhaka",
-        "eventDate": "2025-07-18T14:00:00.000Z",
+        "eventDate": "18/07/2025",
         "creatorEmail": "shahida.islam@gmail.com",
         "creatorName": "Shahida Islam",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "rafiq.ahmed@gmail.com",
-                "name": "Rafiq Ahmed",
-                "photoURL": "https://images.unsplash.com/photo-1507591064344-4c6ce005b1f8?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["donation", "winter", "olddhaka", "charity"]
+        "participants": []
     },
     {
         "title": "Beach Cleanup - Cox's Bazar",
@@ -80,29 +43,11 @@
         "eventType": "Cleanup",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=500&fit=crop",
         "location": "Cox's Bazar Beach",
-        "eventDate": "2025-08-05T05:30:00.000Z",
+        "eventDate": "05/08/2025",
         "creatorEmail": "tanim.hoque@gmail.com",
         "creatorName": "Tanim Hoque",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "nusrat.jahan@gmail.com",
-                "name": "Nusrat Jahan",
-                "photoURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "ibrahim.khan@gmail.com",
-                "name": "Ibrahim Khan",
-                "photoURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "marium.sultana@gmail.com",
-                "name": "Marium Sultana",
-                "photoURL": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["beach", "cleanup", "coxsbazar", "ocean"]
+        "participants": []
     },
     {
         "title": "Food Distribution for Flood Victims - Sylhet",
@@ -110,24 +55,11 @@
         "eventType": "Donation",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=500&fit=crop",
         "location": "Sylhet Sadar",
-        "eventDate": "2025-07-20T10:00:00.000Z",
+        "eventDate": "20/07/2025",
         "creatorEmail": "habiba.Rahman@gmail.com",
         "creatorName": "Habiba Rahman",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "zakir.hossain@gmail.com",
-                "name": "Zakir Hossain",
-                "photoURL": "https://images.unsplash.com/photo-1542190891-2093d38760f2?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "ruma.khatun@gmail.com",
-                "name": "Ruma Khatun",
-                "photoURL": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["flood", "relief", "sylhet", "emergency"]
+        "participants": []
     },
     {
         "title": "Community Garden Setup - Uttara",
@@ -135,74 +67,11 @@
         "eventType": "Plantation",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=500&fit=crop",
         "location": "Uttara Sector 7, Dhaka",
-        "eventDate": "2025-07-25T08:00:00.000Z",
+        "eventDate": "25/07/2025",
         "creatorEmail": "shafiq.ullah@gmail.com",
         "creatorName": "Shafiq Ullah",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "amina.siddique@gmail.com",
-                "name": "Amina Siddique",
-                "photoURL": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["garden", "community", "uttara", "vegetables"]
-    },
-    {
-        "title": "Educational Supply Drive - Rural Manikganj",
-        "description": "Comprehensive educational support initiative for underprivileged children and schools in rural Manikganj district. This drive aims to collect and distribute essential learning materials including textbooks, notebooks, writing instruments, art supplies, backpacks, and educational games. We will visit multiple primary schools in remote villages where children lack basic school supplies due to financial constraints. Volunteers will help sort donated items, create age-appropriate learning kits, and personally deliver supplies to students. We also plan to set up a small library corner in each school with storybooks and reference materials. The event includes an interactive session where volunteers can spend time with children, help with basic lessons, and understand their educational needs. We welcome both material donations and monetary contributions to purchase new supplies. Local teachers will guide us on the most needed items and help us understand the specific challenges faced by rural schools. Transportation, meals, and cultural exchange opportunities with local communities will be arranged. This initiative aims to reduce educational inequality and inspire children to continue their studies.",
-        "eventType": "Donation",
-        "thumbnailImageURL": "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=500&fit=crop",
-        "location": "Manikganj District",
-        "eventDate": "2025-08-01T09:00:00.000Z",
-        "creatorEmail": "liton.mia@gmail.com",
-        "creatorName": "Liton Mia",
-        "creatorPhotoURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "sadia.afrin@gmail.com",
-                "name": "Sadia Afrin",
-                "photoURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "farhan.ali@gmail.com",
-                "name": "Farhan Ali",
-                "photoURL": "https://images.unsplash.com/photo-1507591064344-4c6ce005b1f8?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["education", "children", "manikganj", "rural"]
-    },
-    {
-        "title": "Canal Cleaning Initiative in Dhanmondi",
-        "description": "Participate in our environmental restoration project to clean the canal system in Dhanmondi area. This comprehensive cleanup will focus on removing accumulated plastic bottles, food containers, and other waste materials from the water bodies and canal banks. We'll organize teams to tackle different sections while ensuring safety protocols are followed. All volunteers will receive protective gear including waterproof boots, masks, and cleaning tools. The initiative includes awareness sessions about water pollution and sustainable waste management. Local environmental experts will guide the teams and share knowledge about ecosystem protection. Lunch and refreshments will be arranged for all dedicated volunteers.",
-        "eventType": "Cleanup",
-        "thumbnailImageURL": "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=500&fit=crop",
-        "location": "Dhanmondi, Dhaka",
-        "eventDate": "2025-07-22T07:00:00.000Z",
-        "creatorEmail": "nasir.uddin@yahoo.com",
-        "creatorName": "Nasir Uddin",
-        "creatorPhotoURL": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "rashida.begum@gmail.com",
-                "name": "Rashida Begum",
-                "photoURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "mahbub.alam@hotmail.com",
-                "name": "Mahbub Alam",
-                "photoURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "salma.khatun@gmail.com",
-                "name": "Salma Khatun",
-                "photoURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": ["environment", "water-cleanup", "dhaka", "community", "canal"]
+        "participants": []
     },
     {
         "title": "Park Beautification Drive at Ramna Park",
@@ -210,40 +79,10 @@
         "eventType": "Cleanup",
         "thumbnailImageURL": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop",
         "location": "Ramna Park, Dhaka",
-        "eventDate": "2025-08-05T06:30:00.000Z",
+        "eventDate": "05/08/2025",
         "creatorEmail": "rubina.sultana@gmail.com",
         "creatorName": "Rubina Sultana",
         "creatorPhotoURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
-        "participants": [
-            {
-                "email": "ibrahim.khan@gmail.com",
-                "name": "Ibrahim Khan",
-                "photoURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "taslima.akter@yahoo.com",
-                "name": "Taslima Akter",
-                "photoURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "rafiq.ahmed@gmail.com",
-                "name": "Rafiq Ahmed",
-                "photoURL": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
-            },
-            {
-                "email": "nusrat.jahan@hotmail.com",
-                "name": "Nusrat Jahan",
-                "photoURL": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face"
-            }
-        ],
-        "status": "upcoming",
-        "tags": [
-            "community",
-            "environment",
-            "dhaka",
-            "park",
-            "beautification",
-            "tree-planting"
-        ]
+        "participants": []
     }
 ]

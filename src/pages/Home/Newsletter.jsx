@@ -1,10 +1,11 @@
 import React from "react";
-import { BellPlus } from "lucide-react";
+import { BellPlus, BellRing } from "lucide-react";
 
 const Newsletter = () => {
     return (
         <div className="pri-font bg-secondary/30 border-2 border-secondary/50 shadow-xl rounded-lg p-3 md:p-10 mt-5 md:mt-10 space-y-3 md:space-y-6 drop-shadow-2xl">
-            <h1 className="text-center text-base md:text-2xl font-medium lg:w-max mx-auto sec-font drop-shadow-lg">
+            <h1 className="text-center text-base md:text-2xl font-medium mx-auto sec-font drop-shadow-lg flex flex-col sm:flex-row items-center justify-center gap-1">
+                <BellRing />
                 Never Miss an Opportunity: Get Event Updates & Insights!
             </h1>
             <p className="w-full text-xs md:text-base text-center sm:w-10/12 mx-auto">

@@ -8,7 +8,8 @@ import JoinEvent from "../pages/EventPages/JoinEvent";
 import CreateEvent from "../pages/EventPages/CreateEvent";
 import ManageEvent from "../pages/EventPages/ManageEvent";
 import DefaultError from "../pages/Error/DefaultError";
-import axios from 'axios';
+import axios from "axios";
+import PrivateRoute from "./PrivateRoute";
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
 export const router = createBrowserRouter([
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         Component: Mainlayout,
         errorElement: <DefaultError></DefaultError>,
         children: [
-            { 
+            {
                 index: true,
                 Component: Homepage,
             },
@@ -27,15 +28,27 @@ export const router = createBrowserRouter([
             },
             {
                 path: "event/join",
-                Component: JoinEvent,
+                element: (
+                    <PrivateRoute>
+                        <JoinEvent></JoinEvent>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "event/create",
-                Component: CreateEvent,
+                element: (
+                    <PrivateRoute>
+                        <CreateEvent></CreateEvent>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "event/manage",
-                Component: ManageEvent,
+                element: (
+                    <PrivateRoute>
+                        <ManageEvent></ManageEvent>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/sign-in",

@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
 import { AuthContext } from "../../contexts/AuthProvider";
@@ -23,10 +23,24 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(() => {
-                toast.success("Welcome!");
+                toast.success(`Welcome`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
                 navigate("/");
             })
-            .catch((error) => toast.error(error.message))
+            .catch((error) => {
+                toast.error(`${error.message || error}`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
+            })
             .finally(() => {
                 setLoading(false);
             });
@@ -51,8 +65,24 @@ const SignUp = () => {
         createUser(email, password)
             .then(() => updateUser(name, photo))
             .then(() => navigate("/"))
-            .then(() => toast.success("Greetings!"))
-            .catch((error) => toast.error(error.message))
+            .then(() => {
+                toast.success(`Welcome`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
+            })
+            .catch((error) => {
+                toast.error(`${error.message || error}`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
+            })
             .finally(() => {
                 setLoading(false);
             });
@@ -160,7 +190,10 @@ const SignUp = () => {
                     </div>
                     <p className="text-sm text-center sm:px-6">
                         Already have an account?
-                        <Link to="/sign-in" className="underline ml-1 transition-all duration-300 hover:text-accent">
+                        <Link
+                            to="/sign-in"
+                            className="underline ml-1 transition-all duration-300 hover:text-accent"
+                        >
                             Sign In
                         </Link>
                     </p>

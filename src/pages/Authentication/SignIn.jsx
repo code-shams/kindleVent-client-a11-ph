@@ -1,6 +1,6 @@
 import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
 import signInAni from "../../assets/signIn.json";
@@ -20,10 +20,24 @@ const SignIn = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(() => {
-                toast.success("Welcome back!");
+                toast.success("Welcome back!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
                 navigate("/");
             })
-            .catch((error) => toast.error(error.message))
+            .catch((error) =>
+                toast.error(`${error.message}`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                })
+            )
             .finally(() => {
                 setLoading(false);
             });
@@ -37,10 +51,24 @@ const SignIn = () => {
 
         loginUser(email, password)
             .then(() => {
-                toast.success("Signed in successfully!");
+                toast.success("Welcome back!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                });
                 navigate("/");
             })
-            .catch((error) => toast.error(error.message))
+            .catch((error) =>
+                toast.error(`${error.message}`, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "dark",
+                    transition: Bounce,
+                    hideProgressBar: true,
+                })
+            )
             .finally(() => {
                 setLoading(false);
             });

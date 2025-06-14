@@ -90,6 +90,7 @@ const Navbar = () => {
                             X
                         </button>
                         <NavLink
+                            onClick={handleDropdownCancel}
                             className="navlinks text-xs md:text-base flex items-center gap-1 hover:text-accent font-medium sm:hidden transition"
                             to="/event/upcoming"
                         >
@@ -99,6 +100,7 @@ const Navbar = () => {
                         {user?.email ? (
                             <>
                                 <NavLink
+                                    onClick={handleDropdownCancel}
                                     className="navlinks text-xs md:text-base hover:text-accent flex items-center gap-1 font-medium transition"
                                     to="/event/create"
                                 >
@@ -106,6 +108,7 @@ const Navbar = () => {
                                     Create Event
                                 </NavLink>
                                 <NavLink
+                                    onClick={handleDropdownCancel}
                                     className="navlinks text-xs md:text-base hover:text-accent flex items-center gap-1 font-medium transition"
                                     to="/event/join"
                                 >
@@ -113,6 +116,7 @@ const Navbar = () => {
                                     Join Events
                                 </NavLink>
                                 <NavLink
+                                    onClick={handleDropdownCancel}
                                     className="navlinks text-xs md:text-base hover:text-accent flex items-center gap-1 font-medium transition"
                                     to="/event/manage"
                                 >
