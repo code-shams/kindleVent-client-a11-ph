@@ -45,23 +45,23 @@ const EventCard = ({ eventInfo }) => {
                         />
                         <span className="text-sm">{creatorName}</span>
                     </div>
-                    <span className="flex items-center justify-center gap-1 text-xs sm:text-sm p-1 rounded-full min-w-22 h-max bg-secondary/50 border-0">
+                    <span className="flex items-center justify-center gap-1 text-xs sm:text-sm p-1 px-2 rounded-full min-w-max h-max bg-secondary/50 border-0 text-center">
                         <LucideTag className="size-3"></LucideTag>
                         {eventType}
                     </span>
                 </div>
                 {/* Title */}
-                <h1 className="text-base font-medium flex  gap-1">
+                <h1 className="text-sm sm:text-base font-medium flex gap-1">
                     <LucideSparkle className="size-4 mt-1"></LucideSparkle>
                     {title}
                 </h1>
                 {/* Location & Date */}
                 <div className="flex justify-between gap-5">
-                    <span className="flex gap-1">
+                    <span className="flex gap-1 text-sm sm:text-base">
                         <MapPin className="size-4 mt-1" />
                         {location}
                     </span>
-                    <span className="flex sm:items-center gap-1 text-sm">
+                    <span className="flex sm:items-center gap-1 text-xs sm:text-sm">
                         <Calendar1 className="size-3 mt-1 sm:mt-0" />
                         {date}
                     </span>

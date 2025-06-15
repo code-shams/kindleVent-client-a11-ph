@@ -29,7 +29,7 @@ const Navbar = () => {
             border border-t-0 border-secondary/30
             shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font text-white`}
         >
-            <div>
+            <div className="text-black">
                 <Link
                     to="/"
                     className="pri-font text-lg md:text-2xl font-medium"
