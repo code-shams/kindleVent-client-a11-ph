@@ -8,6 +8,7 @@ import {
     CalendarDays,
     Menu,
 } from "lucide-react";
+import ThemeToggle from "../libs/ThemeToggle";
 
 const Navbar = () => {
     const { user, logoutUser } = use(AuthContext);
@@ -24,9 +25,9 @@ const Navbar = () => {
     return (
         <nav
             className={`contain z-20 p-2 ${user?.email ? "md:p-2" : "md:p-4"}
-            bg-white/10 backdrop-blur-md
+            bg-white/10 backdrop-blur-sm
             border border-t-0 border-secondary/30
-            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font`}
+            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font text-white`}
         >
             <div>
                 <Link
@@ -47,24 +48,29 @@ const Navbar = () => {
                 </NavLink>
                 <div className="flex items-center justify-between gap-3">
                     {/* Image Container */}
-                    <div className="group">
+                    <div>
                         {user?.email ? (
-                            <>
-                                <img
-                                    onClick={handleDropdown}
-                                    className="rounded-full w-12 h-12 cursor-pointer"
-                                    src={user?.photoURL}
-                                    alt=""
-                                />
-                                {/* Hover Name */}
-                                <span
-                                    className={`hidden ${
-                                        menuActive ? "" : "md:block"
-                                    } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/90 drop-shadow-2xl translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out text-black`}
-                                >
-                                    {user?.displayName}
+                            <div className="flex items-center gap-2">
+                                <div className="group">
+                                    <img
+                                        onClick={handleDropdown}
+                                        className="rounded-full w-12 h-12 cursor-pointer"
+                                        src={user?.photoURL}
+                                        alt=""
+                                    />
+                                    {/* Hover Name */}
+                                    <span
+                                        className={`hidden ${
+                                            menuActive ? "" : "md:block"
+                                        } uppercase text-center sec-font font-medium rounded border-secondary p-1 absolute w-54 border right-5 top-17 bg-secondary/90 drop-shadow-2xl translate-x-96 scale-0 group-hover:translate-0 group-hover:scale-100 transition-all duration-400 ease-in-out text-black`}
+                                    >
+                                        {user?.displayName}
+                                    </span>
+                                </div>
+                                <span className="hidden sm:block">
+                                    <ThemeToggle></ThemeToggle>
                                 </span>
-                            </>
+                            </div>
                         ) : (
                             <Menu
                                 className="block sm:hidden"
@@ -89,9 +95,12 @@ const Navbar = () => {
                         >
                             X
                         </button>
+                        <span className="sm:hidden">
+                            <ThemeToggle></ThemeToggle>
+                        </span>
                         <NavLink
                             onClick={handleDropdownCancel}
-                            className="navlinks text-xs md:text-base flex items-center gap-1 hover:text-accent font-medium sm:hidden transition"
+                            className="navlinks mt-2 text-xs md:text-base flex items-center gap-1 hover:text-accent font-medium sm:hidden transition"
                             to="/event/upcoming"
                         >
                             <CalendarDays />
@@ -123,6 +132,12 @@ const Navbar = () => {
                                     <UserRoundPen />
                                     Manage Events
                                 </NavLink>
+                                <button
+                                    onClick={handleSignOut}
+                                    className="btn btn-outline btn-xs font-medium hover:bg-accent hover:text-black transition sm:hidden"
+                                >
+                                    SIGN OUT
+                                </button>
                             </>
                         ) : (
                             <div className="space-x-3">
@@ -141,19 +156,20 @@ const Navbar = () => {
                             </div>
                         )}
                     </div>
-                    {/* Navbar btn */}
                 </div>
-                {/* ) : ( */}
-                {/* // Navbar btn */}
+
                 {user ? (
-                    <button
-                        onClick={handleSignOut}
-                        className="btn btn-outline btn-sm font-medium hover:bg-accent hover:text-black transition"
-                    >
-                        SIGN OUT
-                    </button>
+                    <>
+                        <button
+                            onClick={handleSignOut}
+                            className="btn btn-outline btn-sm font-medium hover:bg-accent hover:text-black transition hidden sm:block"
+                        >
+                            SIGN OUT
+                        </button>
+                    </>
                 ) : (
                     <div className="space-x-3 hidden sm:block">
+                        <ThemeToggle></ThemeToggle>
                         <NavLink
                             className="navBtn btn btn-outline btn-xs md:btn-sm font-medium hover:bg-accent hover:text-black transition"
                             to="/sign-in"
