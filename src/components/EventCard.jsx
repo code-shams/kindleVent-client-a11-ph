@@ -11,6 +11,7 @@ import {
 
 const EventCard = ({ eventInfo }) => {
     const {
+        _id,
         creatorEmail,
         creatorName,
         title,
@@ -66,7 +67,10 @@ const EventCard = ({ eventInfo }) => {
                     </span>
                 </div>
                 <div className="flex justify-center h-full my-3">
-                    <Link className="mt-auto btn btn-primary btn-xs sm:btn-sm border-none hover:bg-accent hover:scale-103 hover:-translate-y-1 hover:text-black transition rounded-full font-normal">
+                    <Link
+                        to={`/event/details/${_id}`}
+                        className="mt-auto btn btn-primary btn-xs sm:btn-sm border-none hover:bg-accent hover:scale-103 hover:-translate-y-1 hover:text-black transition rounded-full font-normal"
+                    >
                         View Details
                         <MoveRight className="size-4" />
                     </Link>

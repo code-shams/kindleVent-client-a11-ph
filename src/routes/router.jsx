@@ -10,6 +10,7 @@ import ManageEvent from "../pages/EventPages/ManageEvent";
 import DefaultError from "../pages/Error/DefaultError";
 import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader/Loader";
+import EventDetails from "../pages/EventPages/EventDetails";
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
 export const router = createBrowserRouter([
@@ -49,6 +50,14 @@ export const router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <ManageEvent></ManageEvent>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "event/details/:id",
+                element: (
+                    <PrivateRoute>
+                        <EventDetails></EventDetails>
                     </PrivateRoute>
                 ),
             },
