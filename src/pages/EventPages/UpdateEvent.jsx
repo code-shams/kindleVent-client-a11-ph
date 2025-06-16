@@ -1,5 +1,6 @@
-import React, { use, useState } from "react";
-import { CalendarDays, FilePlus } from "lucide-react";
+import React, { use, useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { CalendarDays, Save } from "lucide-react";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
@@ -8,38 +9,83 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAxios from "../../Hooks/useAxios";
 import { useNavigate } from "react-router";
+import { addDays, isBefore, parse } from "date-fns";
 
-const CreateEvent = () => {
-    const { axiosSecure } = useAxios();
-
-    const navigate = useNavigate();
-
-    const [loading, setLoading] = useState(false);
-
-    const [selectedDate, setSelectedDate] = useState(() => {
-        const tomDate = new Date();
-        tomDate.setDate(tomDate.getDate() + 1);
-        return tomDate; //? initial selected value is tomorrows date
-    });
-
+const UpdateEvent = () => {
     const { user } = use(AuthContext);
+    const navigate = useNavigate();
+    // ?edited State
+    const [edited, setEdited] = useState(false);
+
+    // ?Dynamic Event Id
+    const eventId = useParams().id;
+    // ?axios hook - adds jwt token to request headers
+    const { axiosSecure } = useAxios();
+    // ?local loading
+    const [loading, setLoading] = useState(false);
+    // ?Storing dynamic event data
+    const [eventInfo, setEventInfo] = useState([]);
+    //? Destructuring event data obj
+    const {
+        creatorName,
+        title,
+        location,
+        eventType,
+        thumbnail,
+        eventDate,
+        details,
+        participants,
+        creatorPhotoURL,
+        creatorEmail,
+    } = eventInfo || {};
+
+    // ?Datepicker state
+    const [selectedDate, setSelectedDate] = useState("");
+    const minDate = addDays(new Date(), 1);
+
+    // ?Getting data from server and storing it to eventInfo state
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const data = await axiosSecure(`/event/details/${eventId}`);
+                setEventInfo(data.data);
+                const parsedDate = parse(
+                    data.data?.eventDate,
+                    "dd/MM/yyyy",
+                    new Date()
+                );
+                setSelectedDate(parsedDate);
+                setLoading(false);
+            } catch (err) {
+                setLoading(false);
+                logoutUser();
+                navigate("/sign-in");
+                Swal.fire({
+                    title: `${err.status} Error!`,
+                    text: `${err.response.data.message}`,
+                    icon: "error",
+                    position: "center",
+                });
+            }
+        };
+        if (eventId) {
+            getData();
+        }
+    }, [axiosSecure]);
+
+    // ?form submit handler fn
     const handleAddPost = (e) => {
         setLoading(true);
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const formObj = Object.fromEntries(formData.entries());
-        formObj.creatorName = user.displayName;
-        formObj.creatorEmail = user.email;
-        formObj.creatorPhotoURL = user.photoURL;
-        formObj.participants = [];
+
         for (const key in formObj) {
-            if (key !== "participants") {
-                if (!formObj[key]) {
-                    toast.error(`${key} is empty! Please fill that out.`);
-                    setLoading(false);
-                    return;
-                }
+            if (!formObj[key]) {
+                toast.error(`${key} is empty! Please fill that out.`);
+                setLoading(false);
+                return;
             }
         }
         if (form.eventType.value === "Select Event Type :") {
@@ -47,26 +93,42 @@ const CreateEvent = () => {
             setLoading(false);
             return;
         }
-        axiosSecure.post("/event/create", formObj).then((data) => {
+        if (isBefore(selectedDate, new Date())) {
+            toast.error(`Selected date must be in the future!`);
             setLoading(false);
-            if (data?.data?.result?.insertedId) {
-                toast.success("Successfully Added a Post", {
-                    icon: "success",
-                    position: "bottom-center",
-                    autoClose: 2000,
-                    hideProgressBar: true,
-                    theme: "dark",
-                });
-                form.reset();
-                navigate("/event/upcoming");
-            } else {
+            return;
+        }
+        setLoading(false);
+        axiosSecure
+            .put(`/event/update/${eventId}`, formObj)
+            .then((data) => {
+                setLoading(false);
+                if (data?.data?.modifiedCount) {
+                    toast.success("Event update successful!", {
+                        icon: "success",
+                        position: "bottom-center",
+                        autoClose: 2000,
+                        hideProgressBar: true,
+                        theme: "dark",
+                    });
+                    form.reset();
+                    navigate("/event/manage");
+                } else if (data?.data?.modifiedCount === 0) {
+                    Swal.fire({
+                        text: "You didn't update anything",
+                        icon: "warning",
+                        timer: 2000,
+                    });
+                }
+            })
+            .catch((err) => {
+                setLoading(false);
                 Swal.fire({
-                    text: "Please try again!",
+                    text: "Something went wrong! Please try again.",
                     icon: "error",
                     timer: 1500,
                 });
-            }
-        });
+            });
     };
     return (
         <div className="contain pri-font">
@@ -75,12 +137,13 @@ const CreateEvent = () => {
             ) : (
                 <div className="pri-font bg-secondary/20 rounded-xl border-2 border-secondary/50 shadow-lg overflow-hidden p-0 py-3 md:px-7 drop-shadow-lg">
                     <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 w-full mx-auto drop-shadow-lg sec-font">
-                        Create an Event
+                        Edit Event
                     </h1>
 
                     {/* Form  */}
                     <div className="w-11/12 mx-auto">
                         <form
+                            onChange={() => setEdited(true)}
                             onSubmit={handleAddPost}
                             className="pt-2 md:pt-5 pb-0"
                         >
@@ -91,14 +154,14 @@ const CreateEvent = () => {
                                     name="creatorName"
                                     className="input input-xs md:input-md rounded-md  focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-9/12 mx-auto sm:m-0"
                                     readOnly
-                                    value={user.displayName}
+                                    value={user?.displayName}
                                 />
                                 <input
                                     type="text"
                                     name="creatorEmail"
                                     className="input input-xs md:input-md rounded-md  focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-9/12 mx-auto sm:m-0"
                                     readOnly
-                                    value={user.email}
+                                    value={user?.email}
                                 />
                             </div>
                             {/* title and location */}
@@ -107,13 +170,13 @@ const CreateEvent = () => {
                                     type="text"
                                     name="title"
                                     className="input input-xs md:input-md rounded-md  focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-9/12 mx-auto sm:m-0"
-                                    placeholder="Title"
+                                    defaultValue={title}
                                 />
                                 <input
                                     type="text"
                                     name="location"
                                     className="input input-xs md:input-md rounded-md  focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-9/12 mx-auto sm:m-0"
-                                    placeholder="Location"
+                                    defaultValue={location}
                                 />
                             </div>
 
@@ -122,7 +185,7 @@ const CreateEvent = () => {
                                 <div className="relative w-full sm:w-9/12">
                                     <select
                                         name="eventType"
-                                        defaultValue="Select Event Type :"
+                                        defaultValue={eventType}
                                         className="cursor-pointer select select-neutral select-xs md:select-md block w-full rounded-md  border border-secondary focus:border-0 shadow-lg placeholder:font-medium focus:border-none focus:outline-accent "
                                     >
                                         <option
@@ -168,7 +231,7 @@ const CreateEvent = () => {
                                     type="url"
                                     name="thumbnail"
                                     className="input input-xs md:input-md rounded-md  focus:outline-accent border border-secondary focus:border-0 shadow-lg w-full sm:w-9/12 mx-auto sm:m-0"
-                                    placeholder="Event Thumbnail"
+                                    defaultValue={thumbnail}
                                 />
                             </div>
 
@@ -180,15 +243,17 @@ const CreateEvent = () => {
                                         Please select event date:
                                         <CalendarDays className="size-4"></CalendarDays>
                                     </span>
+
                                     <DatePicker
                                         selected={selectedDate}
-                                        minDate={selectedDate}
+                                        minDate={minDate}
                                         name="eventDate"
                                         dateFormat="dd/MM/yyyy"
                                         className="cursor-pointer"
-                                        onChange={(date) =>
-                                            setSelectedDate(date)
-                                        }
+                                        onChange={(date) => {
+                                            setEdited(true);
+                                            setSelectedDate(date);
+                                        }}
                                     />
                                 </div>
 
@@ -197,7 +262,7 @@ const CreateEvent = () => {
                                     name="details"
                                     cols="30"
                                     rows="10"
-                                    placeholder={"Details"}
+                                    defaultValue={details}
                                     className="h-40 w-full sm:w-9/12 mx-auto sm:m-0 resize-none rounded-md p-2 md:p-5  focus:outline-accent border bg-base-100 border-secondary focus:border-0 text-sm md:placeholder:text-base"
                                 ></textarea>
                             </div>
@@ -206,10 +271,11 @@ const CreateEvent = () => {
                             <div className="text-center">
                                 <button
                                     type="submit"
+                                    disabled={!edited}
                                     className="btn btn-primary btn-sm hover:bg-accent hover:border-none w-full sm:w-auto px-5 md:text-sm mt-4 hover:scale-105 rounded-full transition-all duration-300"
                                 >
-                                    <FilePlus className="size-4"></FilePlus>
-                                    Create
+                                    <Save className="size-4" />
+                                    Save
                                 </button>
                             </div>
                         </form>
@@ -220,4 +286,4 @@ const CreateEvent = () => {
     );
 };
 
-export default CreateEvent;
+export default UpdateEvent;

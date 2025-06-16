@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
 import { format } from "date-fns";
 import {
     Calendar1,
@@ -7,21 +7,20 @@ import {
     MapPin,
     LucideTag,
     MoveRight,
+    Pencil,
 } from "lucide-react";
 
-const EventCard = ({ eventInfo }) => {
+const EventCard = ({ eventInfo, manage }) => {
     const {
         _id,
-        creatorEmail,
         creatorName,
         title,
         location,
         eventType,
         thumbnail,
         eventDate,
-        details,
         creatorPhotoURL,
-    } = eventInfo;
+    } = eventInfo || {};
 
     const isoDate = new Date(eventDate);
     const date = format(isoDate, "dd/MM/yyyy");
@@ -67,13 +66,22 @@ const EventCard = ({ eventInfo }) => {
                     </span>
                 </div>
                 <div className="flex justify-center h-full my-3">
-                    <Link
-                        to={`/event/details/${_id}`}
-                        className="mt-auto btn btn-primary btn-xs sm:btn-sm border-none hover:bg-accent hover:scale-103 hover:-translate-y-1 hover:text-black transition rounded-full font-normal"
-                    >
-                        View Details
-                        <MoveRight className="size-4" />
-                    </Link>
+                    {manage ? (
+                        <Link
+                            to={`/event/update/${_id}`}
+                            className="mt-auto btn btn-primary btn-xs sm:btn-sm border-none hover:bg-accent hover:scale-103 hover:-translate-y-1 hover:text-black transition"
+                        >
+                            <Pencil className="size-5" />
+                        </Link>
+                    ) : (
+                        <Link
+                            to={`/event/details/${_id}`}
+                            className="mt-auto btn btn-primary btn-xs sm:btn-sm border-none hover:bg-accent hover:scale-103 hover:-translate-y-1 hover:text-black transition rounded-full font-normal"
+                        >
+                            View Details
+                            <MoveRight className="size-4" />
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

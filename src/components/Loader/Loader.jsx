@@ -4,10 +4,7 @@ import Lottie from "lottie-react";
 
 const Loader = () => {
     return (
-        <div
-            className="min-h-screen flex flex-col justify-center items-center transition-colors duration-300 z-50"
-            // data-theme={localStorage.getItem("theme")}
-        >
+        <div className="min-h-screen flex flex-col justify-center items-center transition-colors duration-300 z-50">
             <Lottie
                 className="h-32 my-auto animate-pulse"
                 animationData={animation}
