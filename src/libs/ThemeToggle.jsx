@@ -3,7 +3,7 @@ import { themeChange } from "theme-change";
 
 const ThemeToggle = () => {
     const [theme, setTheme] = useState(
-        () => localStorage.getItem("theme") || "dark"
+        () => localStorage.getItem("theme") || "light"
     );
 
     useEffect(() => {
