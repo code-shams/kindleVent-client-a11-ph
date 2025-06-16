@@ -3,7 +3,7 @@ import { BellPlus, BellRing } from "lucide-react";
 
 const Newsletter = () => {
     return (
-        <div className="pri-font bg-secondary/30 border-2 border-secondary/50 shadow-xl rounded-lg p-3 md:p-10 mt-5 md:mt-10 space-y-3 md:space-y-6 drop-shadow-2xl">
+        <div className="pri-font bg-secondary/30 border-2 border-secondary/50 shadow-xl rounded-lg p-3 md:p-10 mt-5 md:mt-10 space-y-3 md:space-y-6 drop-shadow-2xl contain">
             <h1 className="text-center text-base md:text-2xl font-medium mx-auto sec-font drop-shadow-lg flex flex-col sm:flex-row items-center justify-center gap-1">
                 <BellRing />
                 Never Miss an Opportunity: Get Event Updates & Insights!

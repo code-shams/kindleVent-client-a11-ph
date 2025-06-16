@@ -9,7 +9,7 @@ const Features = () => {
                 How You Can Drive Change
             </h1>
             {/* Cards */}
-            <section className="flex flex-col md:flex-row gap-1 md:gap-5 md:justify-between pt-3  md:pt-6">
+            <section className="contain flex flex-col md:flex-row gap-1 md:gap-5 md:justify-between pt-3  md:pt-6">
                 {/* CARD1 */}
                 <div className="flex flex-col gap-3 bg-secondary/30 drop-shadow-sm border-2 border-secondary/50 p-4 text-center rounded-2xl scale-95 hover:scale-100 transition-all duration-500">
                     <h1 className="sec-font text-lg md:text-xl font-bold text-accent drop-shadow-lg">

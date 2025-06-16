@@ -5,7 +5,7 @@ const Gallery = () => {
         <div className="mt-5 md:mt-10 pri-font bg-secondary/20 border-2 border-secondary/10 rounded-xl shadow-lg p-0 md:p-7 pt-3 drop-shadow-lg">
             <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 w-max mx-auto drop-shadow-lg sec-font">Gallery</h1>
             {/* Images */}
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5">
+            <section className="contain grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5">
                 {/* image1 */}
                 <div className="relative scale-95 hover:scale-100 transition group overflow-hidden rounded-lg">
                     <img
