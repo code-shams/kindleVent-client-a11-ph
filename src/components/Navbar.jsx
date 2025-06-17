@@ -54,7 +54,7 @@ const Navbar = () => {
                                 <div className="group">
                                     <img
                                         onClick={handleDropdown}
-                                        className="rounded-full w-12 h-12 cursor-pointer"
+                                        className="rounded-full w-10 h-10 md:w-12 md:h-12 cursor-pointer"
                                         src={user?.photoURL}
                                         alt=""
                                     />

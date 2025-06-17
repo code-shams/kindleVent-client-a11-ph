@@ -7,18 +7,9 @@ import Loader from "../../components/Loader/Loader";
 
 const Mainlayout = () => {
     const { loading } = use(AuthContext);
-    const [showLoader, setShowLoader] = useState(true);
+
     const navigation = useNavigation();
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (!loading) {
-                setShowLoader(false);
-            }
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, [loading]);
     return (
         <div
             className="min-h-screen relative"
@@ -27,7 +18,7 @@ const Mainlayout = () => {
             }}
         >
             <div className="bg-[var(--bg-overlay)] absolute inset-0"></div>
-            {loading || showLoader || navigation.state === "loading" ? (
+            {loading || navigation.state === "loading" ? (
                 <div className="z-10">
                     <Loader></Loader>
                 </div>
