@@ -185,14 +185,10 @@ const UpdateEvent = () => {
                                 <div className="relative w-full sm:w-9/12">
                                     <select
                                         name="eventType"
-                                        defaultValue={eventType}
                                         className="cursor-pointer select select-neutral select-xs md:select-md block w-full rounded-md  border border-secondary focus:border-0 shadow-lg placeholder:font-medium focus:border-none focus:outline-accent "
                                     >
-                                        <option
-                                            value="Select Event Type :"
-                                            disabled
-                                        >
-                                            Select Event Type :
+                                        <option value={eventType}>
+                                            {eventType}
                                         </option>
                                         <option value="Clean Up">
                                             Clean Up
