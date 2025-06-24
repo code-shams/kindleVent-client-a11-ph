@@ -32,12 +32,6 @@ This client application is built with React and deployed on Firebase.
 
 ## 🚀 Features
 
--   **Authentication**
-
-    -   Email & Password signup/login
-    -   Google OAuth login
-    -   JWT-based protected routes
-
 -   **Event Management**
 
     -   Create events with future-date validation
