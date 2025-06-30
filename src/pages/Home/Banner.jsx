@@ -17,8 +17,8 @@ const Banner = () => {
             style={bgStyle}
         >
             <div className="bg-black/10 absolute inset-0"></div>
-            <div className="contain bg-secondary/20 backdrop-blur-lg w-full mx-auto my-auto p-3 md:p-10 h-full rounded-lg pri-font text-center space-y-1 md:space-y-5 flex flex-col justify-center items-center">
-                <p className="rounded-full flex items-center gap-2 text-sm md:text-base font-semibold text-primary sec-font">
+            <div className=" bg-secondary/20 backdrop-blur-lg w-full mx-auto my-auto p-3 md:p-10 h-full rounded-lg pri-font text-center space-y-1 md:space-y-5 flex flex-col justify-center items-center">
+                <p className="rounded-full flex items-center gap-2 text-xs sm:text-base font-semibold text-primary sec-font">
                     <Sparkles className="text-primary size-4 md:size-auto"></Sparkles>
                     Connect.
                     <span>

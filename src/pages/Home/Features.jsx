@@ -1,17 +1,17 @@
-import { UserPlus, FilePlus, CalendarRange } from "lucide-react";
+import { UserPlus, FilePlus, CalendarRange, FileBox } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 
 const Features = () => {
     return (
-        <div className="mt-5 md:mt-10 pri-font bg-secondary/20 rounded-xl border-2 border-secondary/10 shadow-lg overflow-hidden p-0 md:p-7 pt-3 drop-shadow-lg">
-            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 w-full mx-auto drop-shadow-lg sec-font">
+        <div className="mt-5 md:mt-16 overflow-hidden pri-font">
+            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 pb-8 w-full mx-auto drop-shadow-lg sec-font">
                 How You Can Drive Change
             </h1>
             {/* Cards */}
-            <section className="contain flex flex-col md:flex-row gap-1 md:gap-5 md:justify-between pt-3  md:pt-6">
+            <section className="bg-black/5 rounded-xl border-2 border-secondary/10  p-2 md:p-5 drop-shadow-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 md:justify-between overflow-hidden">
                 {/* CARD1 */}
-                <div className="flex flex-col gap-3 bg-secondary/30 drop-shadow-sm border-2 border-secondary/50 p-4 text-center rounded-2xl scale-95 hover:scale-100 transition-all duration-500">
+                <div className="flex flex-col gap-3 bg-secondary/30 border-2 border-secondary/50 p-4 text-center rounded-2xl sm:scale-95 hover:scale-100 transition-all duration-500">
                     <h1 className="sec-font text-lg md:text-xl font-bold text-accent drop-shadow-lg">
                         Explore Events
                     </h1>
@@ -29,7 +29,7 @@ const Features = () => {
                     </Link>
                 </div>
                 {/* card2 */}
-                <div className="flex flex-col gap-3 bg-secondary/30 drop-shadow-sm border-2 border-secondary/50 p-4 text-center rounded-2xl scale-95 hover:scale-100 transition-all duration-500">
+                <div className="flex flex-col gap-3 bg-secondary/30 border-2 border-secondary/50 p-4 text-center rounded-2xl sm:scale-95 hover:scale-100 transition-all duration-500">
                     <h1 className="sec-font text-lg md:text-xl font-bold text-accent drop-shadow-lg">
                         Join the Community
                     </h1>
@@ -48,7 +48,7 @@ const Features = () => {
                     </Link>
                 </div>
                 {/* card3 */}
-                <div className="flex flex-col gap-1 md:gap-3 bg-secondary/30 drop-shadow-sm border-2 border-secondary/50 p-4 text-center rounded-2xl scale-95 hover:scale-100 transition-all duration-500">
+                <div className="flex flex-col gap-1 md:gap-3 bg-secondary/30 border-2 border-secondary/50 p-4 text-center rounded-2xl sm:scale-95 hover:scale-100 transition-all duration-500">
                     <h1 className="sec-font text-lg md:text-xl font-bold text-accent drop-shadow-lg">
                         Create Event
                     </h1>
@@ -64,6 +64,24 @@ const Features = () => {
                     >
                         <FilePlus className="size-4" />
                         Start an Event
+                    </Link>
+                </div>
+                <div className="flex flex-col gap-1 md:gap-3 bg-secondary/30 border-2 border-secondary/50 p-4 text-center rounded-2xl sm:scale-95 hover:scale-100 transition-all duration-500">
+                    <h1 className="sec-font text-lg md:text-xl font-bold text-accent drop-shadow-lg">
+                        Manage Events
+                    </h1>
+                    <p className="text-sm md:text-base pb-2 md:pb-0">
+                        Turn your vision into impact. Our platform simplifies
+                        organizing and promoting social development events,
+                        helping you rally participants and create positive
+                        change effortlessly.
+                    </p>
+                    <Link
+                        to="event/create"
+                        className="mt-auto btn btn-primary btn-xs md:btn-sm hover:bg-accent hover:border-none transition-all duration-300 shadow-sm w-max mx-auto rounded-full"
+                    >
+                        <FileBox className="size-4" />
+                        Manage
                     </Link>
                 </div>
             </section>

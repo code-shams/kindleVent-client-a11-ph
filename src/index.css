@@ -90,7 +90,7 @@
 }
 
 .contain {
-    @apply w-11/12 mx-auto max-w-[1515px];
+    @apply w-11/12 mx-auto max-w-screen-2xl;
 }
 
 a.navlinks.active {

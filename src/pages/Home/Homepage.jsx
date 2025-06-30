@@ -6,7 +6,7 @@ import Newsletter from "./Newsletter";
 
 const Homepage = () => {
     return (
-        <div className="">
+        <div className="contain">
             <Banner></Banner>
             <Features></Features>
             <Gallery></Gallery>
