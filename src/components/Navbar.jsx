@@ -23,11 +23,9 @@ const Navbar = () => {
         setMenuActive(false);
     };
     return (
-        <nav
-            className={`contain z-20 p-2 ${user?.email ? "md:p-2" : "md:p-4"}
-            bg-white/10 backdrop-blur-sm
-            border border-t-0 border-secondary/30
-            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font text-white`}
+        <div
+            className={`contain z-20 p-2 ${user?.email ? "" : "md:p-4"}
+            sticky top-0 right-0 left-0 flex items-center justify-between pri-font text-white`}
         >
             <div className="text-black">
                 <Link
@@ -185,8 +183,7 @@ const Navbar = () => {
                     </div>
                 )}
             </div>
-            {/* )} */}
-        </nav>
+        </div>
     );
 };
 
