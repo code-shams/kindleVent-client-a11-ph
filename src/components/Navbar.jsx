@@ -104,7 +104,6 @@ const Navbar = () => {
                         >
                             Contact us
                         </NavLink>
-                        ,
                     </>
                 )}
                 <div className="flex items-center justify-between gap-3">
