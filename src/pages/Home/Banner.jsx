@@ -1,8 +1,9 @@
-import React from "react";
+import React, { use } from "react";
 import banner from "../../assets/banner.jpg";
 import { Sparkles, Handshake } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Banner = () => {
     const bgStyle = {
@@ -10,14 +11,14 @@ const Banner = () => {
         backgroundPosition: "center",
         backgroundSize: "contain",
     };
-
+    const { user } = use(AuthContext);
     return (
         <div
             className="w-full p-2 md:p-10 relative rounded-xl overflow-hidden flex items-center"
             style={bgStyle}
         >
             <div className="bg-black/10 absolute inset-0"></div>
-            <div className=" bg-secondary/20 backdrop-blur-lg w-full mx-auto my-auto p-3 md:p-10 h-full rounded-lg pri-font text-center space-y-1 md:space-y-5 flex flex-col justify-center items-center">
+            <div className=" bg-secondary/20 backdrop-blur-lg w-full mx-auto my-auto p-3 md:p-5 h-full rounded-lg pri-font text-center space-y-1 md:space-y-5 flex flex-col justify-center items-center">
                 <p className="rounded-full flex items-center gap-2 text-xs sm:text-base font-semibold text-primary sec-font">
                     <Sparkles className="text-primary size-4 md:size-auto"></Sparkles>
                     Connect.
@@ -49,12 +50,21 @@ const Banner = () => {
                     meetups, and experiences that help you grow personally and
                     professionally.
                 </p>
-                <Link
-                    to="/sign-in"
-                    className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none"
-                >
-                    <Handshake className="size-4 md:size-auto" /> JOIN US !
-                </Link>
+                {user?.email ? (
+                    <a
+                        href="#newsletter"
+                        className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none"
+                    >
+                        <Handshake className="size-4 md:size-auto" /> JOIN US !
+                    </a>
+                ) : (
+                    <Link
+                        to="/sign-in"
+                        className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none"
+                    >
+                        <Handshake className="size-4 md:size-auto" /> JOIN US !
+                    </Link>
+                )}
             </div>
         </div>
     );

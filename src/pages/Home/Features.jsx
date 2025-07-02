@@ -4,8 +4,8 @@ import { Link } from "react-router";
 
 const Features = () => {
     return (
-        <div className="mt-5 md:mt-16 overflow-hidden pri-font">
-            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 pb-8 w-full mx-auto drop-shadow-lg sec-font">
+        <div className="mt-7 md:mt-14 overflow-hidden pri-font">
+            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 pb-3 md:pb-5 w-full mx-auto drop-shadow-lg sec-font">
                 How You Can Drive Change
             </h1>
             {/* Cards */}

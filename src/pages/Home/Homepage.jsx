@@ -10,7 +10,9 @@ const Homepage = () => {
             <Banner></Banner>
             <Features></Features>
             <Gallery></Gallery>
-            <Newsletter></Newsletter>
+            <section id="newsletter" className="scroll-mt-20">
+                <Newsletter></Newsletter>
+            </section>
         </div>
     );
 };

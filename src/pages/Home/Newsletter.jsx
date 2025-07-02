@@ -16,7 +16,7 @@ const Newsletter = () => {
         })
     }
     return (
-        <div className="pri-font bg-secondary/30 border-2 border-secondary/50 shadow-xl rounded-lg p-3 md:p-10 mt-5 md:mt-10 space-y-3 md:space-y-6 drop-shadow-2xl contain scale-95 active:scale-100 hover:scale-100 transition">
+        <div className="pri-font bg-secondary/30 border-2 border-secondary/50 shadow-xl rounded-lg p-3 md:p-10 mt-5 md:mt-10 space-y-3 md:space-y-6 drop-shadow-2xl">
             <h1 className="text-center text-base md:text-2xl font-medium mx-auto sec-font drop-shadow-lg flex flex-col sm:flex-row items-center justify-center gap-1">
                 <BellRing />
                 Never Miss an Opportunity: Get Event Updates & Insights!
@@ -32,7 +32,7 @@ const Newsletter = () => {
                     type="text"
                     ref={mail}
                     placeholder="Enter your email"
-                    className="input input-xs md:input-md rounded-md bg-black/20 backdrop-blur-lg focus:outline-accent border border-secondary focus:border-0 shadow-lg placeholder:text-white w-9/12 sm:w-6/12 mx-auto sm:m-0"
+                    className="input input-xs md:input-md rounded-md bg-black/20 backdrop-blur-lg focus:outline-none focus:border-none shadow-lg text-white w-9/12 sm:w-6/12 mx-auto sm:m-0"
                 />
                 <button onClick={handleClick} className="btn btn-primary btn-xs md:btn-md hover:bg-accent hover:border-none hover:-translate-y-1 transition pri-font">
                     <BellPlus className="size-3 md:size-5"></BellPlus>
