@@ -20,13 +20,12 @@ const Gallery = () => {
         {
             src: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&h=500&fit=crop&auto=format",
             eventTitle: "Blood Donation Camp and Health Awareness Program",
-            location: "Dhaka Cantonment", // leave blank if no specific location
+            location: "Dhaka Cantonment",
         },
         {
             src: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&h=500&fit=crop",
             eventTitle: "Green Initiative",
             location: "Rajshahi District",
-            hasOverlay: true,
         },
         {
             src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop&auto=format",
@@ -38,10 +37,10 @@ const Gallery = () => {
 
     return (
         <div className="mt-7 md:mt-14 overflow-hidden pri-font">
-            <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 pb-3 md:pb-5 w-full mx-auto drop-shadow-lg sec-font">
-                Gallery
-            </h1>
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5 bg-black/5 border-2 border-secondary/10 rounded-xl shadow-lg p-0 md:p-7 drop-shadow-lg">
+                <h1 className="text-lg md:text-3xl font-medium text-center px-2 md:px-10 pb-3 md:pb-5 w-full mx-auto drop-shadow-lg sec-font">
+                    Gallery
+                </h1>
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5 bg-black/5 border-2 border-secondary/10 rounded-xl p-0 md:p-7 drop-shadow-lg">
                 {galleryItems.map((item, index) => (
                     <GalleryItem key={index} item={item} />
                 ))}
@@ -69,9 +68,6 @@ const GalleryItem = ({ item }) => {
                 src={item.src}
                 alt={item.title}
             />
-            {item.hasOverlay && (
-                <div className="bg-black/20 absolute inset-0 z-0"></div>
-            )}
             <p
                 className={`
             p-2 w-full bg-white/10 drop-shadow-lg backdrop-blur-lg absolute top-0

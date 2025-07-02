@@ -20,7 +20,7 @@ const Footer = () => {
             {/* Main Footer Content */}
             <div className="border-t border-secondary/30">
                 <div className="contain pt-5 md:pt-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Brand Section */}
                         <div className="space-y-4">
                             <Link
@@ -67,7 +67,7 @@ const Footer = () => {
                         </div>
 
                         {/* Quick Links */}
-                        <div className="space-y-4">
+                        <div className="space-y-4 sm:justify-self-center">
                             <h4 className="font-semibold pri-font">
                                 Quick Links
                             </h4>
@@ -103,50 +103,9 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* Support */}
-                        <div className="space-y-4">
-                            <h4 className="font-semibold pri-font">
-                                Support
-                            </h4>
-                            <div className="space-y-2">
-                                <Link
-                                    to="/help"
-                                    className="hover:text-accent transition text-sm block"
-                                >
-                                    Help Center
-                                </Link>
-                                <Link
-                                    to="/faq"
-                                    className="hover:text-accent transition text-sm block"
-                                >
-                                    FAQ
-                                </Link>
-                                <Link
-                                    to="/contact"
-                                    className="hover:text-accent transition text-sm block"
-                                >
-                                    Contact Us
-                                </Link>
-                                <Link
-                                    to="/privacy"
-                                    className="hover:text-accent transition text-sm block"
-                                >
-                                    Privacy Policy
-                                </Link>
-                                <Link
-                                    to="/terms"
-                                    className="hover:text-accent transition text-sm block"
-                                >
-                                    Terms of Service
-                                </Link>
-                            </div>
-                        </div>
-
                         {/* Contact Info */}
-                        <div className="space-y-4">
-                            <h4 className="font-semibold pri-font">
-                                Contact
-                            </h4>
+                        <div className="space-y-4 lg:justify-self-center">
+                            <h4 className="font-semibold pri-font">Contact</h4>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2 text-sm">
                                     <Mail size={16} />
@@ -169,31 +128,9 @@ const Footer = () => {
             {/* Bottom Bar */}
             <div className="">
                 <div className="contain pt-8 pb-2">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-500 text-sm">
-                            © 2025 KindleVent. All rights reserved.
-                        </p>
-                        <div className="flex gap-6">
-                            <Link
-                                to="/privacy"
-                                className="text-gray-500 hover:text-accent transition text-sm"
-                            >
-                                Privacy
-                            </Link>
-                            <Link
-                                to="/terms"
-                                className="text-gray-500 hover:text-accent transition text-sm"
-                            >
-                                Terms
-                            </Link>
-                            <Link
-                                to="/cookies"
-                                className="text-gray-500 hover:text-accent transition text-sm"
-                            >
-                                Cookies
-                            </Link>
-                        </div>
-                    </div>
+                    <p className="text-gray-500 text-sm text-center">
+                        © 2025 KindleVent. All rights reserved.
+                    </p>
                 </div>
             </div>
         </footer>

@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Loader from "../components/Loader/Loader";
 import EventDetails from "../pages/EventPages/EventDetails";
 import UpdateEvent from "../pages/EventPages/UpdateEvent";
+import Contact from "../pages/Contact";
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
 export const router = createBrowserRouter([
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
             {
                 path: "event/upcoming",
                 hydrateFallbackElement: <Loader></Loader>,
-                loader: () => fetch(`${serverURL}/events/upcoming`),
+                loader: () => fetch(`${serverURL}/events/upcoming?sort=1`),
                 Component: Upcoming,
             },
             {
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
                         <EventDetails></EventDetails>
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: "/contact",
+                Component: Contact,
             },
             {
                 path: "/sign-in",

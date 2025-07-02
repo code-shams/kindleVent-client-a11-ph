@@ -7,6 +7,7 @@ import {
     UserRoundPen,
     CalendarDays,
     Menu,
+    Contact,
 } from "lucide-react";
 import ThemeToggle from "../libs/ThemeToggle";
 
@@ -22,12 +23,42 @@ const Navbar = () => {
     const handleDropdownCancel = () => {
         setMenuActive(false);
     };
+    const navRoutes = {
+        public: [
+            <NavLink
+                className="navlinks font-medium hidden sm:block md:text-base hover:text-accent transition"
+                to="/event/upcoming"
+            >
+                Upcoming Events
+            </NavLink>,
+        ],
+        private: [
+            <NavLink
+                className="navlinks font-medium hidden lg:block hover:text-accent transition"
+                to="/event/create"
+            >
+                Create Event
+            </NavLink>,
+            <NavLink
+                className="navlinks font-medium hidden lg:block hover:text-accent transition"
+                to="/event/join"
+            >
+                Joined Events
+            </NavLink>,
+            <NavLink
+                className="navlinks font-medium hidden lg:block hover:text-accent transition"
+                to="/event/manage"
+            >
+                Manage Events
+            </NavLink>,
+        ],
+    };
     return (
         <nav
             className={`contain z-20 p-2 ${user?.email ? "" : "md:p-4"}
             bg-white/10 backdrop-blur-sm
             border border-t-0 border-secondary/30
-            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font text-white`}
+            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 flex items-center justify-between pri-font`}
         >
             <div className="text-black">
                 <Link
@@ -39,13 +70,43 @@ const Navbar = () => {
                     ent
                 </Link>
             </div>
+
+            {/* Nav Routes on Larger screens only */}
+            {user?.email ? (
+                <div className="hidden text-xs lg:text-base sm:flex justify-between items-center gap-5">
+                    {navRoutes.public}
+                    {navRoutes.private}
+                    <NavLink
+                        className="navlinks font-medium md:text-base hidden sm:block hover:text-accent transition"
+                        to="/contact"
+                    >
+                        Contact us
+                    </NavLink>
+                </div>
+            ) : (
+                ""
+            )}
+
             <div className="flex gap-3 items-center">
-                <NavLink
-                    className="navlinks font-medium hidden sm:block text-sm md:text-base hover:text-accent transition"
-                    to="/event/upcoming"
-                >
-                    Upcoming Events
-                </NavLink>
+                {user?.email ? (
+                    ""
+                ) : (
+                    <>
+                        <NavLink
+                            className="navlinks font-medium hidden sm:block text-sm md:text-base hover:text-accent transition"
+                            to="/event/upcoming"
+                        >
+                            Upcoming Events
+                        </NavLink>
+                        <NavLink
+                            className="navlinks font-medium hidden sm:block hover:text-accent transition"
+                            to="/contact"
+                        >
+                            Contact us
+                        </NavLink>
+                        ,
+                    </>
+                )}
                 <div className="flex items-center justify-between gap-3">
                     {/* Image Container */}
                     <div>
@@ -54,7 +115,7 @@ const Navbar = () => {
                                 <div className="group">
                                     <img
                                         onClick={handleDropdown}
-                                        className="rounded-full w-10 h-10 md:w-12 md:h-12 cursor-pointer"
+                                        className="rounded-full w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 cursor-pointer"
                                         src={user?.photoURL}
                                         alt=""
                                     />
@@ -122,7 +183,7 @@ const Navbar = () => {
                                     to="/event/join"
                                 >
                                     <UserPlus />
-                                    Join Events
+                                    Joined Events
                                 </NavLink>
                                 <NavLink
                                     onClick={handleDropdownCancel}
@@ -131,6 +192,14 @@ const Navbar = () => {
                                 >
                                     <UserRoundPen />
                                     Manage Events
+                                </NavLink>
+                                <NavLink
+                                    onClick={handleDropdownCancel}
+                                    className="navlinks mt-2 text-xs md:text-base flex items-center gap-1 hover:text-accent font-medium sm:hidden transition"
+                                    to="/contact"
+                                >
+                                    <Contact></Contact>
+                                    Contact us
                                 </NavLink>
                                 <button
                                     onClick={handleSignOut}
@@ -141,6 +210,14 @@ const Navbar = () => {
                             </>
                         ) : (
                             <div className="space-x-3">
+                                <NavLink
+                                    onClick={handleDropdownCancel}
+                                    className="navlinks my-2 text-xs md:text-base flex items-center gap-1 hover:text-accent font-medium sm:hidden transition"
+                                    to="/contact"
+                                >
+                                    <Contact></Contact>
+                                    Contact us
+                                </NavLink>
                                 <NavLink
                                     className="navBtn btn btn-outline btn-xs md:btn-sm font-medium hover:bg-accent hover:text-black transition"
                                     to="/sign-in"
@@ -162,7 +239,7 @@ const Navbar = () => {
                     <>
                         <button
                             onClick={handleSignOut}
-                            className="btn btn-outline btn-sm font-medium hover:bg-accent hover:text-black transition hidden sm:block"
+                            className="btn btn-outline btn-xs lg:btn-sm font-medium hover:bg-accent hover:text-black transition hidden sm:block"
                         >
                             SIGN OUT
                         </button>

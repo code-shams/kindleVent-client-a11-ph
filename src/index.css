@@ -98,7 +98,7 @@ html {
 }
 
 a.navlinks.active {
-    @apply text-primary font-semibold;
+@apply font-semibold bg-primary px-2 py-1 rounded-lg text-black hover:text-black;
 }
 
 a.navBtn.active {

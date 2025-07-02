@@ -39,13 +39,13 @@ const Features = () => {
                         skills, and collaborate for shared inspiration and
                         collective impact.
                     </p>
-                    <Link
-                        to="/sign-in"
+                    <a
+                        href="#newsletter"
                         className="mt-auto btn btn-primary btn-xs md:btn-sm hover:bg-accent hover:border-none transition-all duration-300 shadow-sm w-max mx-auto rounded-full"
                     >
                         <UserPlus className="size-4" />
                         Join Community
-                    </Link>
+                    </a>
                 </div>
                 {/* card3 */}
                 <div className="flex flex-col gap-1 md:gap-3 bg-secondary/30 border-2 border-secondary/50 p-4 text-center rounded-2xl sm:scale-95 hover:scale-100 transition-all duration-500">
