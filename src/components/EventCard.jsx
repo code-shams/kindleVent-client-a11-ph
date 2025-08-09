@@ -42,9 +42,9 @@ const EventCard = ({ eventInfo, manage }) => {
                             className="h-6 rounded-full"
                             alt=""
                         />
-                        <span className="text-sm">{creatorName}</span>
+                        <span className="text-xs">{creatorName}</span>
                     </div>
-                    <span className="flex items-center justify-center gap-1 text-xs sm:text-sm p-1 px-2 rounded-full min-w-max h-max bg-secondary/50 border-0 text-center">
+                    <span className="flex items-center justify-center gap-1 text-xs p-1 px-2 rounded-full min-w-max h-max bg-secondary/50 border-0 text-center">
                         <LucideTag className="size-3"></LucideTag>
                         {eventType}
                     </span>
@@ -56,11 +56,11 @@ const EventCard = ({ eventInfo, manage }) => {
                 </h1>
                 {/* Location & Date */}
                 <div className="flex justify-between gap-5">
-                    <span className="flex gap-1 text-sm sm:text-base">
+                    <span className="flex items-center gap-1 text-xs">
                         <MapPin className="size-4 mt-1" />
                         {location}
                     </span>
-                    <span className="flex sm:items-center gap-1 text-xs sm:text-sm">
+                    <span className="flex sm:items-center gap-1 text-xs">
                         <Calendar1 className="size-3 mt-1 sm:mt-0" />
                         {date}
                     </span>
