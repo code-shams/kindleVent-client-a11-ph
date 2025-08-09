@@ -204,7 +204,7 @@ const Upcoming = () => {
             </div>
 
             {/* All Event Cards Container */}
-            <div className="contain grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-3 pt-3 md:pt-5">
+            <div className="contain grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 md:gap-3 pt-3 md:pt-5">
                 {/* Individual Card Container */}
                 {eventData.map((eventInfo) => (
                     <EventCard
