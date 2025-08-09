@@ -24,7 +24,11 @@ const Mainlayout = () => {
                 </div>
             ) : (
                 <>
-                    <header>
+                    <header
+                        className="bg-white/10 z-20 backdrop-blur-sm
+            border border-t-0 border-secondary/30
+            shadow-md rounded-2xl rounded-t-none fixed top-0 right-0 left-0 "
+                    >
                         <Navbar></Navbar>
                     </header>
                     <main className="z-10 relative pt-22 md:pt-32 min-h-[calc(100vh-420px)]">
